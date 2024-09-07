@@ -1,0 +1,82 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "color": "Red",
+      "price": 10
+    },
+    {
+      "id": "2",
+      "name": "Banana",
+      "color": "Yellow",
+      "price": 5
+    },
+    {
+      "id": "3",
+      "name": "Orange",
+      "color": "Orange",
+      "price": 8
+    },
+    {
+      "id": "4",
+      "name": "Grapes",
+      "color": "Purple",
+      "price": 12
+    },
+    {
+      "id": "5",
+      "name": "Pineapple",
+      "color": "Brown",
+      "price": 15
+    },
+    {
+      "id": "6",
+      "name": "Strawberry",
+      "color": "Red",
+      "price": 20
+    },
+    {
+      "id": "7",
+      "name": "Watermelon",
+      "color": "Green",
+      "price": 25
+    },
+    {
+      "id": "8",
+      "name": "Peach",
+      "color": "Pink",
+      "price": 18
+    },
+    {
+      "id": "9",
+      "name": "Kiwi",
+      "color": "Brown",
+      "price": 22
+    },
+    {
+      "id": "10",
+      "name": "Mango",
+      "color": "Yellow",
+      "price": 30
+    },
+    {
+      "id": "11",
+      "name": "Goplana",
+      "color": "Pink",
+      "price": 8
+    },
+    {
+      "id": "12",
+      "name": "Pamelo",
+      "color": "Pink",
+      "price": 10
+    },
+    {
+      "name": "Cocosio",
+      "color": "White",
+      "price": 23,
+      "id": "13"
+    }
+  ]
+}
