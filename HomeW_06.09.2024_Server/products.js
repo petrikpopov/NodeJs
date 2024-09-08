@@ -2,8 +2,12 @@ const url = "http://localhost:3000/products";
 
 class apiProducts {
     
-    getMethod(url) {
-        fetch(url, {
+    constructor(url){
+        this.url = url;
+    }
+
+    getMethod() {
+        fetch(this.url, {
             method:"GET"
         }).then(response=>{
             if(!response.status==200){
@@ -13,12 +17,12 @@ class apiProducts {
         }).then(data=>console.table(data))
     }
 
-    postMethod(url){
-        fetch(url, {
+    postMethod(){
+        fetch(this.url, {
             method:"POST",
             body: JSON.stringify({
-                id: "13",
-                name: "Cocos",
+                id: "14",
+                name: "Macaca",
                 color: "White",
                 price: 14
             })
@@ -31,7 +35,7 @@ class apiProducts {
     }
 
     deleteMethod(id) {
-        const url = `http://localhost:3000/products/${id}`;
+        const url = `${this.url}/${id}`
         fetch(url, {
             method:"DELETE"
         }).then(response=>{
@@ -43,7 +47,7 @@ class apiProducts {
     }
     
     putMethod(id, updateData){
-        const url = `http://localhost:3000/products/${id}`;
+        const url = `${this.url}/${id}`;
         fetch(url, {
             method:"PUT",
             body:JSON.stringify(updateData)
@@ -56,7 +60,7 @@ class apiProducts {
     }
 }
 
-const product = new apiProducts();
+const product = new apiProducts(url);
 
 const updataOldData = {
    name: "Cocosio",
@@ -64,7 +68,7 @@ const updataOldData = {
    price: 23
 }
 
-product.putMethod(13, updataOldData)
+product.putMethod(12, updataOldData)
 product.deleteMethod(13);
-product.postMethod(url)
-product.getMethod(url); 
+product.postMethod();
+product.getMethod(); 

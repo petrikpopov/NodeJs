@@ -67,16 +67,10 @@
       "price": 8
     },
     {
-      "id": "12",
-      "name": "Pamelo",
-      "color": "Pink",
-      "price": 10
-    },
-    {
       "name": "Cocosio",
       "color": "White",
       "price": 23,
-      "id": "13"
+      "id": "12"
     }
   ]
 }
