@@ -68,7 +68,7 @@ const updataOldData = {
    price: 23
 }
 
-product.putMethod(12, updataOldData)
-product.deleteMethod(13);
-product.postMethod();
+// product.putMethod(12, updataOldData)
+// product.deleteMethod(13);
+// product.postMethod();
 product.getMethod(); 

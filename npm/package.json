@@ -1,6 +1,6 @@
 {
   "name": "popov-front-end",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "this is my new npm-package",
   "main": "index.js",
