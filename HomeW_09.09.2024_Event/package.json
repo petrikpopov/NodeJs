@@ -1,0 +1,13 @@
+{
+  "name": "homew_09.09.2024_event",
+  "version": "1.0.0",
+  "description": "",
+  "main": "event.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
