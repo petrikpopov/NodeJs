@@ -1,13 +1,13 @@
 {
-  "name": "homew_09.09.2024_event",
+  "name": "classw_13.09.2024_bufferfiles",
   "version": "1.0.0",
-  "main": "event.js",
+  "description": "",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "ISC"
 }

@@ -47,5 +47,11 @@ emitter.removeListener("error", secontError);
 console.log("Удален второй емитер");
 emitter.emit("error");
 
-//// 3
+// console.log(emitter.listeners("error"))
+// console.log(emitter.getMaxListeners("error"))
+
+console.log(`Default: ${emitter.getMaxListeners("error")}`);
+emitter.setMaxListeners(20);
+console.log(`Count of listner: ${emitter.getMaxListeners("error")}`);
+
 
