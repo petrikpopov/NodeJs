@@ -1,5 +1,5 @@
 document.getElementById('my_form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Останавливаем стандартную отправку формы
+    event.preventDefault();
 
     const title = document.querySelector('input[name="title"]').value;
     const price = document.querySelector('input[name="price"]').value;
@@ -9,8 +9,8 @@ document.getElementById('my_form').addEventListener('submit', function (event) {
         price: parseFloat(price),
     };
 
-    // Отправляем POST запрос на сервер для добавления продукта
-    fetch('/products', {
+    console.log(title, price)
+    fetch('/', {
         method: 'POST', 
         headers: {
             'Content-Type': 'application/json'

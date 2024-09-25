@@ -12,7 +12,7 @@ app.get('/', (req, res)=>{
     res.sendFile(path.join(import.meta.dirname, "index.html"));
 })
 
-app.get('/', (req, res)=>{
+app.get('/products', (req, res)=>{
     // res.send("Welcome to Node Js server!!");
     
     res.status(200).json(products)
