@@ -1,0 +1,9 @@
+<div>
+    <p>Hello, <span>{{#if user}}{{user}}{{else}}guest{{/if}}</span></p>
+
+    {{#if user}}
+        <form action="/user/logout" method="get">
+            <button type="submit">Logout</button>
+        </form>
+    {{/if}}
+</div>
