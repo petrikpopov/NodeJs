@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+</head>
+
+<body>
+    <h1>Products List</h1>
+    <ul id="product-list"></ul>
+
+    <h2>Update Product</h2>
+    <form id="update-form">
+        <label for="id">Product ID:</label>
+        <input type="number" id="id" required>
+        <label for="title">Title:</label>
+        <input type="text" id="title" required>
+        <label for="price">Price:</label>
+        <input type="number" id="price" required>
+        <button type="submit">Update</button>
+    </form>
+
+    <div id="response"></div>
+    <script src="/js/product.js"></script>
+
+</body>
+
+</html>
