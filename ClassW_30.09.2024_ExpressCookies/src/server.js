@@ -7,6 +7,7 @@ import navbar from "./middleawars/navbar-middleawar.js";
 import userRoutes from "./routes/user-routes.js";
 import cookieParser from "cookie-parser";
 import { checkUser } from "./middleawars/user-middleawar.js";
+import session from "express-session";
 const PORT = process.env.PORT || 3000;
 const hbs = exphbs.create({
     defaultLayout: "main",
@@ -14,7 +15,14 @@ const hbs = exphbs.create({
 });
 
 const app = express();
+app.use(express.static("public"))
 app.use(cookieParser());
+app.use(session({
+    secret: process.env.SESSION_KEY,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {maxAge: 1000*60*60},
+}))
 app.use(checkUser);
 app.use(navbar);
 app.engine("hbs", hbs.engine);

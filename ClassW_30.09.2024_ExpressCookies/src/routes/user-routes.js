@@ -2,11 +2,17 @@ import { Router } from "express";
 import validator from "validator";
 import bcrypt from "bcrypt";
 import { Users } from "../data/users.js";
+
 const userRoutes = Router();
+
+userRoutes.get('/', (req, res)=>{
+    res.json(Users);
+    res.end();
+})
 
 userRoutes.route('/signup')
     .get((req, res)=>{
-        res.render("form_signup");})
+        res.render("form_register");})
     .post((req, res)=>{
         // console.log(req.body);
         // console.log(validator.isEmail(req.body.email));
@@ -35,6 +41,7 @@ userRoutes.route('/signup')
         });
 
         Users.push({
+            id: Users.length + 1, 
             login: req.body.login,
             email: req.body.email,
             hashedPassword: hashedPassword
@@ -42,15 +49,42 @@ userRoutes.route('/signup')
 
         console.log(Users);
 
-        res.cookie("user", req.body.login, {
-            httpOnly: true,
-            maxAge: 1000 * 60 * 60,
-        });
+        req.session.user = {
+            login: req.body.login,
+            email: req.body.email,
+        }
         res.redirect('/')
     });
 
 userRoutes.get('/logout', (req, res) => {
-    res.clearCookie("user");
+    req.session.destroy();
     res.redirect('/');
 });
+
+userRoutes.route('/signin')
+    .get((req, res)=>{
+        res.render("form_auth");
+    })
+    .post((req, res) => {
+       
+        const {login, password} = req.body;
+        const user = Users.find(el => el.login === login);
+        if (user) {
+            req.session.user = {
+                login: user.login
+            };
+            console.log("User found:", user);
+            
+            res.redirect('/');
+        } else {
+            console.log("User not found.");
+            res.send("Invalid login or password.");
+        }
+
+        console.log({
+            login: req.body.login,
+            password: req.body.password
+        });
+    });
+
 export default userRoutes
